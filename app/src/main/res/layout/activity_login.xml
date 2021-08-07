@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_marginTop="30dp"
         android:orientation="vertical"
         android:layout_width="0dp"
@@ -44,7 +44,7 @@
                 android:id="@+id/admin_panel_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="190dp"
                 android:layout_marginTop="20dp"
                 android:text="Admin?"
                 android:textColor="@color/AppColoe"
@@ -53,6 +53,8 @@
         </LinearLayout>
 
         <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/loginNow"
             android:textColor="@color/AppColoe"
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
@@ -60,10 +62,12 @@
             android:text="Login Now" />
 
         <TextView
+            android:id="@+id/LoginText"
             android:textColor="@color/AppColoe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_below="@+id/loginNow"
             android:text="Please login to explore new World" />
 
         <EditText
@@ -75,7 +79,8 @@
             android:hint="Phone Number"
             android:textSize="16sp"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:layout_below="@id/LoginText"/>
 
         <EditText
             android:background="@drawable/edit_text_background"
@@ -86,10 +91,12 @@
             android:hint="Password"
             android:textSize="16sp"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:layout_below="@+id/login_phoneNum"/>
 
         <com.rey.material.widget.CheckBox
             android:id="@+id/remember_me"
+            android:layout_below="@+id/login_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Material.Drawable.CheckBox"
@@ -105,6 +112,7 @@
 
         <Button
             android:background="@drawable/btn_main"
+            android:layout_below="@+id/remember_me"
             android:id="@+id/btnLogin"
             android:layout_marginTop="24dp"
             android:layout_width="match_parent"
@@ -118,10 +126,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:textAlignment="center"
+            android:layout_below="@+id/btnLogin"
             android:text="Don't have an account? SignUp" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView2"

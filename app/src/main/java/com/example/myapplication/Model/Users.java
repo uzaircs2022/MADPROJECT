@@ -2,16 +2,18 @@ package com.example.myapplication.Model;
 
 public class Users
 {
-    private String name, password, phone;
+    private String name, password, phone, image, address;
 
     public Users()
     {
     }
 
-    public Users(String name, String password, String phone) {
+    public Users(String name, String password, String phone, String image, String address) {
         this.name = name;
         this.password = password;
         this.phone = phone;
+        this.image = image;
+        this.address = address;
     }
 
     public String getName() {
@@ -36,6 +38,22 @@ public class Users
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
 
