@@ -7,6 +7,7 @@
     tools:context=".LoginActivity">
 
     <LinearLayout
+        android:layout_marginTop="30dp"
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -20,19 +21,22 @@
 
 
         <LinearLayout
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
             android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="20dp"
+            >
 
             <TextView
                 android:id="@+id/not_admin_panel_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
                 android:text="Not Admin?"
                 android:textColor="@color/AppColoe"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:visibility="invisible"
                 />
 
@@ -40,11 +44,11 @@
                 android:id="@+id/admin_panel_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="200dp"
+                android:layout_marginLeft="130dp"
                 android:layout_marginTop="20dp"
                 android:text="Admin?"
                 android:textColor="@color/AppColoe"
-                android:textSize="17sp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
