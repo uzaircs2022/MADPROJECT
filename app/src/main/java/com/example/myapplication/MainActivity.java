@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this,CartActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -115,6 +115,17 @@ public class MainActivity extends AppCompatActivity
                         holder.txtProductPrice.setText(" Price " + model.getPrice() + "$");
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
+                        holder.imageView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v)
+                            {
+                                Intent intent = new Intent(MainActivity.this,ProductDetailsActivity.class);
+                                intent.putExtra("pid",model.getPid());
+                                startActivity(intent) ;
+
+                            }
+                        });
+
                     }
 
                     @Override
@@ -156,6 +167,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_cart)
         {
+            Intent intent = new Intent(MainActivity.this,CartActivity.class);
+            startActivity(intent);
 
         }
         else if (id == R.id.nav_orders)

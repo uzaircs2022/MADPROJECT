@@ -212,7 +212,7 @@ public class SettingsActivity extends AppCompatActivity {
                         ref.child(Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
 
                         progressDialog.dismiss();
-                        startActivity( new Intent(SettingsActivity.this, LoginActivity.class));
+                        startActivity( new Intent(SettingsActivity.this, MainActivity.class));
                         Toast.makeText(SettingsActivity.this, "Profile Info Updated successfully", Toast.LENGTH_SHORT).show();
 
                         finish();

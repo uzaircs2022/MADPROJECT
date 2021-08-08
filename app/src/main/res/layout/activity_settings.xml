@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/settings_phone_number"
-        android:hint="Full Name"
+        android:hint="Updated Name"
         android:layout_margin="15dp"
         android:padding="10dp"
 
