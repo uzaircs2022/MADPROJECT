@@ -33,7 +33,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private FloatingActionButton addToCartBtn;
     private ImageView productImage;
     private TextView productPrice, productDescription, productName;
-    private String productID = "";
+    private String productID = "",state = "Normal";
 
 
     @Override
@@ -54,10 +54,26 @@ public class ProductDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                addingToCartList();
+                if(state.equals("Order Placed") || state.equals("Graphics Downaloded"))
+                {
+                    Toast.makeText(ProductDetailsActivity.this, "You can purchase more Graphics, once your order is confirmed", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    addingToCartList();
+                }
 
             }
         });
+    }
+
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+
+        CheckOrderState();
     }
 
     private void addingToCartList()
@@ -131,6 +147,41 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void CheckOrderState()
+    {
+        DatabaseReference ordersRef;
+        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+
+        ordersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot)
+            {
+                if (snapshot.exists())
+                {
+                    String downloadingState = snapshot.child("state").getValue().toString();
+
+                    if (downloadingState.equals("downloaded"))
+                    {
+                        state = "Graphics Downloaded";
+
+                    }
+                    else if(downloadingState.equals("not downloaded"))
+                    {
+                        state = "Order Placed";
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error)
+            {
 
             }
         });
