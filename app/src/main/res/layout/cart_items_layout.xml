@@ -8,8 +8,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/AppColoe"
+        android:layout_height="90dp"
+        android:background="@drawable/background"
         android:padding="10dp"
         >
 
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Product Name"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="20dp"
             android:layout_marginLeft="5dp"
             android:textStyle="bold"
             />
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Product price"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             android:layout_below="@id/cart_product_name"

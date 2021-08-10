@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Home Page");
         setSupportActionBar(toolbar);
@@ -171,8 +173,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         }
-        else if (id == R.id.nav_orders)
+        else if (id == R.id.nav_search)
         {
+            Intent intent = new Intent(MainActivity.this,SearchProductsActivity.class);
+            startActivity(intent);
 
         }
         else if (id == R.id.nav_categories)

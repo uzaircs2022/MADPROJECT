@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication.NoActionBar">
-        <activity android:name=".ConfirmFinalOrderActivity"></activity>
+        <activity android:name=".SearchProductsActivity" />
+        <activity android:name=".AdminUserProductsActiviy" />
+        <activity android:name=".AdminNewOrdersActivity" />
+        <activity android:name=".ConfirmFinalOrderActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".SettingsActivity" />

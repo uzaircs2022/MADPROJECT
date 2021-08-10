@@ -185,7 +185,7 @@ public class CartActivity extends AppCompatActivity {
                     }
                     else if(downloadingState.equals("not downloaded"))
                     {
-                        txtTotalAmount.setText("Not Downloaded yet");
+                        txtTotalAmount.setText("Not Downloaded Yet");
                         recyclerView.setVisibility(View.GONE);
                         txtMsg1.setVisibility(View.VISIBLE);
                         NextProcessBtn.setVisibility(View.GONE);
